@@ -2,25 +2,27 @@
 Para uma maior flexibilidade e domínio sobre as métricas fornecidas pelo os10, a criação de um agente customizado é a melhor alternativas de monitoração BGP em VRFs. Com esta solução, a obtenção de outras informações vitais para o completo gerenciamento das informações de BGP, poderá ser efetuada de modo mais granular (como situações de flapping, por exemplo), caso a LuizaLabs desejar. 
 
 ## 1. Requirements
-	a. pip3 install prometheus_client
-	b. apt-get install sshpass
+Garanta que a versão do python seja igual ou superior à 3.9. Instale "sshpass" e carregue os módulos cliente do prometheus:  
+	# sudo pip3 install prometheus_client  
+	# sudo apt-get install sshpass  
 
 
 ## 2. Criação de Serviço no Agente
-	a. copie prometheus-dell-bgp-exporter.py para /usr/local/bin:
-   	   sudo cp prometheus-dell-bgp-exporter.py /usr/local/bin
-	b. copie o arquivo de configuração para /etc/default:
-   	   sudo cp prometheus-dell-bgp-exporter.yaml /etc/default
-	c. copie prometheus-dell-bgp-exporter.service para /etc/systemd/system:
-   	   sudo cp prometheus-dell-bgp-exporter.service /etc/systemd/system
-	d. realize a recarga da nova configuração:
-       sudo systemctl daemon-reload
-	e. iniciE o  novo serviço:
-   	   sudo systemctl start prometheus-dell-bgp-exporter
-	f. verifique seu status:
-   	   sudo systemctl status prometheus-dell-bgp-exporter
-	g. habilite o serviço para ser inicializado durante o reboot:
-   	   sudo systemctl enable prometheus-dell-bgp-exporter
+
+copie prometheus-dell-bgp-exporter.py para /usr/local/bin:  
+	# sudo cp prometheus-dell-bgp-exporter.py /usr/local/bin  
+copie o arquivo de configuração para /etc/default:  
+	# sudo cp prometheus-dell-bgp-exporter.yaml /etc/default  
+copie prometheus-dell-bgp-exporter.service para /etc/systemd/system:  
+	# sudo cp prometheus-dell-bgp-exporter.service /etc/systemd/system  
+realize a recarga da nova configuração:  
+	# sudo systemctl daemon-reload  
+inicie o  novo serviço:  
+	# sudo systemctl start prometheus-dell-bgp-exporter  
+verifique seu status:  
+	# sudo systemctl status prometheus-dell-bgp-exporter  
+habilite o serviço para ser inicializado durante o reboot:  
+	# sudo systemctl enable prometheus-dell-bgp-exporter  
 
 
 ## 3. Alterações do arquivo de configuração no Agente
