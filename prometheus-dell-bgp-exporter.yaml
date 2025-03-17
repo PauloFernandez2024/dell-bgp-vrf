@@ -1,0 +1,7 @@
+device:
+  host: 10.251.80.1
+  user: admin
+  password: admin
+exporter:
+  port: 8081
+  timeout: 120
