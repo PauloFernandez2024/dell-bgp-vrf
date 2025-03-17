@@ -10,17 +10,23 @@ Garanta que a versão do python seja igual ou superior à 3.9. Instale "sshpass"
 ## 2. Criação de Serviço no Agente
 
 copie prometheus-dell-bgp-exporter.py para /usr/local/bin:  
-	# sudo cp prometheus-dell-bgp-exporter.py /usr/local/bin  
+	# sudo cp prometheus-dell-bgp-exporter.py  /usr/local/bin  
+   
 copie o arquivo de configuração para /etc/default:  
-	# sudo cp prometheus-dell-bgp-exporter.yaml /etc/default  
-copie prometheus-dell-bgp-exporter.service para /etc/systemd/system:  
-	# sudo cp prometheus-dell-bgp-exporter.service /etc/systemd/system  
+	# sudo cp prometheus-dell-bgp-exporter.yaml  /etc/default  
+  
+copie prometheus-dell-bgp-exporter.service para  /etc/systemd/system:  
+	# sudo cp prometheus-dell-bgp-exporter.service  /etc/systemd/system  
+   
 realize a recarga da nova configuração:  
-	# sudo systemctl daemon-reload  
+  	# sudo systemctl  daemon-reload  
+  
 inicie o  novo serviço:  
-	# sudo systemctl start prometheus-dell-bgp-exporter  
+	# sudo systemctl start  prometheus-dell-bgp-exporter 
+   
 verifique seu status:  
 	# sudo systemctl status prometheus-dell-bgp-exporter  
+  
 habilite o serviço para ser inicializado durante o reboot:  
 	# sudo systemctl enable prometheus-dell-bgp-exporter  
 
