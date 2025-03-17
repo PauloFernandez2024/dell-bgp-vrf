@@ -92,8 +92,7 @@ def get_os10_metrics(host, user, password):
                     peer_state = states[state]
                     local_bgps['bgpPeerState'].append(peer_state)
                     duration = " ".join(a_line[i] for i in range(7, len(a_line)))
-                    total_fsm = get_duration_sec(duration.strip())debug2: channel 0: window 999209 sent adjust 49367
-
+                    total_fsm = get_duration_sec(duration.strip())
                     local_bgps['bgpPeerFsmEstablishedTime'].append(total_fsm)
                 elif 'Received' in line:
                     a_line = line.split()
@@ -204,10 +203,13 @@ class CustomCollector(object):
 
 
 if __name__ == "__main__":
-    start_http_server(8081)
+    config = get_configuration()
+    exporter = config['exporter']
+    port = exporter['port']
+    timeout = exporter['timeout']
+    start_http_server(int(port))
     REGISTRY.register(CustomCollector())
     while True:
-        config = get_configuration()
         device = config['device']
         get_os10_metrics(device['host'], device['user'], device['password'])
-        time.sleep(120)
+        time.sleep(int(timeout))
