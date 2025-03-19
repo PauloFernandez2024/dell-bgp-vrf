@@ -67,7 +67,7 @@ Abaixo, segue um exemplo que pode ser utilizado, ressaltando que alguns valores 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;replacement: 127.0.0.1:8081  
 
 target: endereço do equipamento dell final, onde são realizadas as consultas pelo agente  
-replacement: endereço onde o agente customizado esteja sendo excutado, incluindo a porta tcp que o agente está em "listenning" (deve ser a mesmo valor que o utilizado no arquivo de configuração do agente)  
+replacement: endereço onde o agente customizado esteja sendo executado, incluindo a porta tcp que o agente está em "listenning" (deve ser a mesmo valor que o utilizado no arquivo de configuração do agente)  
 
 
 
