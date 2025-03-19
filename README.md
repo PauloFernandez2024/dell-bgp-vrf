@@ -1,10 +1,11 @@
 # dell-bgp-vrf
-Para uma maior flexibilidade e domínio sobre as métricas fornecidas pelo os10, a criação de um agente customizado é a melhor alternativas de monitoração BGP em VRFs. Com esta solução, a obtenção de outras informações vitais para o completo gerenciamento das informações de BGP, poderá ser efetuada de modo mais granular (como situações de flapping, por exemplo), caso a LuizaLabs desejar. 
+Para uma maior flexibilidade e domínio sobre as métricas fornecidas pelo os10, a criação de um agente customizado é a melhor alternativa de monitoração BGP em VRFs. Com esta solução, a obtenção de outras informações vitais para o completo gerenciamento das informações de BGP, poderá ser efetuada de modo mais granular (como situações de flapping, por exemplo), se necessário.
 
 ## 1. Requirements
 Garanta que a versão do python seja igual ou superior à 3.9. Instale "sshpass" e carregue os módulos cliente do prometheus:  
 	# sudo pip3 install prometheus_client  
 	# sudo apt-get install sshpass  
+Caso o Linux seja diferente do Ubuntu, verifique como instalar sshpass. 
 
 
 ## 2. Criação de Serviço no Agente
