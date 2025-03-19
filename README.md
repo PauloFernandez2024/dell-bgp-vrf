@@ -53,7 +53,7 @@ timeout: intervalo que o agente utiliza para gerar informações atualizadas das
   
 ## 4. Alterações do arquivo de configuração no Prometheus server:
 Para que o prometheus possa consultar o novo agente, é necessário que o arquivo de configuração "prometheus.yml" seja atualizado.
-Abaixo, segue um exemplo que pode ser utilizado, ressaltando que alguns valores precisariam de alteração:
+Abaixo, segue um exemplo que pode ser utilizado, ressaltando que alguns valores precisam ser modificados:
 
 &nbsp;- job_name: os10_network_switch  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static_configs:  
